@@ -1,0 +1,62 @@
+{
+	"results": [
+		{
+			"sanskritName": "Adho Mukha Vrksasana",
+			"englishName": "Downward-Facing Tree Pose",
+			"postureType": "Inversion",
+            "description": "An inversion where the yogi balances on their hands using the strength of their core and arms.",
+            "image": "Images/handstand-pose.jpg"
+		},
+        {
+			"sanskritName": "Kapotasana",
+			"englishName": "Pigeon Pose",
+			"postureType": "Sitting",
+            "description": "A sitting Asana where one slips the right knee forwrd between the hands, and brings the foot out slightly near the left hip. Lower the pelvis and stretch the left leg straight out behind, lowering the knee to the floor. Use a folded blanket if yur pelvis is not resting comfortably on the floor",
+            "image": "Images/pigeon-pose"
+		},
+        {
+			"sanskritName": "Salamba Sarvangasana",
+			"englishName": "Supported Shoulder Stand",
+			"postureType": "Inversion",
+            "description": "to enter the pose, start by lying backside-down on the mat. Bend the knees and place the feet on the mat as close to the buttocks as possible. On an exhale with a strong core, press the arms and upper body into the ground and press the legs up overhead, mving the hips and legs off the floor.",
+            "image": "Images/Sarvangasana-shoulder-stand.jpg"
+		},
+        {
+			"sanskritName": "Parsvottonasana",
+			"englishName": "Pyramid Pose",
+			"postureType": "Standing",
+            "description": "Pyramid Pose (Parsvottanasana) is a deep forward fold that helps to stretch hip muscles and hamstrings and lengthen the spine.",
+            "image": "Images/pyramid-pose.jpg"
+		},
+        {
+			"sanskritName": "Urdha Mukha Svanasana",
+			"englishName": "Upward Dog",
+			"postureType": "Backbend",
+            "description": "In this asana, the body lies belly down with the arms pressing into the ground and lifting the body with an arching back.",
+            "image": "Images/up-dog-pose.jpg"
+		},
+		{
+			"sanskritName": "Chakrasana",
+			"englishName": "Upward-Facing Bow Pose",
+			"postureType": "Backbend",
+			"description": "",
+			"image": "Images/Wheel-Pose.jpg"
+		},
+		{
+			"sanskritName": "",
+			"englishName": "",
+			"postureType": "",
+			"description": "",
+			"image": "Images/warrior-2.jpg"
+		},
+		{
+			"sanskritName": "",
+			"englishName": "",
+			"postureType": "",
+			"description": "",
+			"image": "Images/warrior-1.jpg"
+		},
+
+		
+	]
+}
