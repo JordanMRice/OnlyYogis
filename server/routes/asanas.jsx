@@ -4,7 +4,7 @@ const router = express.Router();
 const Asana = require('../models/asanaModel.jsx');
 
 //retrieve all
-router.get('/', async (req, res) => {
+router.get('/asana/all', async (req, res) => {
     try{
         const asanas = await Asana.find();
         res.json({asanas});
