@@ -1,17 +1,29 @@
 import axios from "axios";
 
 
-const fetchAsanaData = () => {
-    return axios.get('http://localhost:5000/asanas')
+const fetchAsanaData = (posture) => {
+    return axios.get(`http://localhost:5000/asanas/asana/${posture}`)
       .then((data) => {
   
-        console.log(data.data.asanas[0]);
+        console.log(data);
         return data.data.asanas;
       })
       .catch(err => {
         console.error(err);
       });
 }
+
+// const fetchAsanaByType = (posture) =>{
+//   return axios.get(`http://localhost:5000/asana/${posture}`)
+//     .then((data) => {
+//       return data.data.asanas;
+//     })
+//     .catch(err => {
+//       console.error(err)
+//     });
+// }
+
+
 
 const fetchUserData = () => {
 
@@ -26,5 +38,6 @@ const fetchUserData = () => {
       });
 }
 
-export default fetchAsanaData;
+export default fetchAsanaData; 
+
   
