@@ -10,25 +10,29 @@ import { text } from "body-parser";
 //implement  onClick for AsanaFilter
 
 
-const AsanaFeed = (props) => {
+const AsanaFeed = () => {
     
     //console.log(fetchAsanaData())
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
-    const [asanaFilter, setAsanaFilter] = useState('false');
+    const [asanaFilter, setAsanaFilter] = useState("all");
 
-    function asanaFiltering(filter){
+
+    function asanaFiltering(filter) {
         
-        console.log(filter)
-        console.log("onClick is working")
         setAsanaFilter(filter)
-
+        fetchAsanaData(asanaFilter)
+        console.log("This is the asanaFilter now: ", asanaFilter)
+        
+        
     }
+
+   
 
 
     useEffect(() => {
-        fetchAsanaData()
+        fetchAsanaData(asanaFilter)
             .then(data => {
             
                 console.log("this is the data: ", data);
@@ -39,11 +43,29 @@ const AsanaFeed = (props) => {
             },
             (error) => {
                 setIsLoaded(true);
-                setError(error)
+                setError(error);
             }
         );
     
     }, []);
+
+    // useEffect(() => {
+    //     fetchAsanaByType()
+    //         .then(data => {
+    //             setIsLoaded(true);
+    //             setItems(data)
+
+    //         },
+    //         (error) => {
+    //             setIsLoaded(true);
+    //             setError(error);
+    //         }
+            
+    //         );
+
+    // }, []);
+
+   
 
     if(error) {
         return <div>Error: {error.message}</div>;
@@ -56,38 +78,40 @@ const AsanaFeed = (props) => {
             <div>
                 <ul>
                     <Button
-                         onClick={() => asanaFiltering(true)} 
+                         onClick={() => asanaFiltering("all")} 
                          text='All Asanas' />
+                         
                     <Button
-                         onClick={() => asanaFiltering('Back Bends')} 
-                         text='Back Bends' />
+                         onClick={() => asanaFiltering("backbend")} 
+                         text='Back Bends' /> 
                     <Button 
-                        onClick={() => asanaFiltering('Standing')} 
+                        onClick={() => asanaFiltering("standing")} 
                         text='Standing' />
                     <Button 
-                        onClick={() => asanaFiltering('Sitting')}
+                        onClick={() => asanaFiltering("sitting")}
                         text='Sitting' />  
                     <Button 
-                        onClick={() => asanaFiltering('Reclining')}
+                        onClick={() => asanaFiltering("reclining")}
                         text='Reclining' />  
                     <Button 
-                        onClick={() => asanaFiltering('Twisting')}
+                        onClick={() => asanaFiltering("twists")}
                         text='Twisting' />  
                     <Button 
-                        onClick={() => asanaFiltering('Forward Bends')}
+                        onClick={() => asanaFiltering("forwardbends")}
                         text='Foward Bends' />  
                     <Button 
-                        onClick={() => asanaFiltering('Inversions')}
+                        onClick={() => asanaFiltering("inversions")}
                         text='Inversions' />  
                 </ul>
                 
                 <h3>
                     <div>
                     {items.map(items => (
-                            items.postureType === asanaFilter ? AsanaCard(items) : AsanaCard(items)
+                           AsanaCard(items)
                     // .filter(items => (
                     //         items.standing === asanaFilter
                     //     )) 
+                        //AsanaCard(items)
                     ))}
                         
                     </div>
