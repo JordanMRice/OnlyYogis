@@ -11,18 +11,18 @@ import { useEffect, useState } from "react";
     return (
         <>
             <li>
-            <h2>
-                {englishName}
-            </h2>
-                <p>Sanskrit Name:{sanskritName}</p>
-                <p>Posture Type:{postureType}</p>
-                <p>Description:{description}</p>
-            
-            <button> Read More</button>
-            <button> Favorite </button>
-            <button> Share!</button>
+                <h2>
+                    {englishName}
+                </h2>
+                    <p>Sanskrit Name:{sanskritName}</p>
+                    <p>Posture Type:{postureType}</p>
+                    <p>Description:{description}</p>
+                
+                <button> Read More</button>
+                <button> Favorite </button>
+                <button> Share!</button>
 
-        </li>
+            </li>
         </>
         
     );

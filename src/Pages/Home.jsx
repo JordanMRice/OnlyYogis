@@ -16,7 +16,7 @@ const Home = () => {
 
     return (
         <div>
-            <h1> Bitch! This the home page right here!</h1>
+            <h1> This the home page right here!</h1>
         </div>
     );
 };

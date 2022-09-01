@@ -24,14 +24,10 @@ router.post('/', async (req, res) => {
         // vinyasa: req.body.vinyasa,
         // kundalini: req.body.kundalini,
         // iyengar: req.body.iyengar
-
     });
-    
     try {
         const savedAsana = await asana.save()
         res.json(savedAsana);
-        
-        
     }catch(err){
         res.json({ message: err })
     }

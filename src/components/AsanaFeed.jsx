@@ -3,13 +3,10 @@ import AsanaCard from '../components/AsanaCard'
 import fetchAsanaData from "../../lib/OnlyYogisApi";
 import { Button } from "./Button";
 import { text } from "body-parser";
-//import 
-
+import { set } from "mongoose";
 
 //implement toggle view mode once css is set up
 //implement  onClick for AsanaFilter
-
-
 const AsanaFeed = () => {
     
     //console.log(fetchAsanaData())
@@ -19,53 +16,32 @@ const AsanaFeed = () => {
     const [asanaFilter, setAsanaFilter] = useState("all");
 
 
-    function asanaFiltering(filter) {
-        
-        setAsanaFilter(filter)
-        fetchAsanaData(asanaFilter)
-        console.log("This is the asanaFilter now: ", asanaFilter)
+    // function asanaFiltering(filter){
+       
         
         
-    }
-
-   
+    // }
 
 
-    useEffect(() => {
-        fetchAsanaData(asanaFilter)
+        useEffect(() => {
+            console.log("this is what that shit say: ", asanaFilter)
+            fetchAsanaData(asanaFilter)
             .then(data => {
-            
-                console.log("this is the data: ", data);
-                setIsLoaded(true);
-                setItems(data);
-                
-
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
-        );
+                    
+                    console.log("this is the data: ", data);
+                    setIsLoaded(true);
+                    setItems(data);
+                    
+                },
+                    (error) => {
+                    setIsLoaded(true);
+                    console.log(error)
+                    setError(error);
+                }
+            );
+        }, [asanaFilter]);
     
-    }, []);
-
-    // useEffect(() => {
-    //     fetchAsanaByType()
-    //         .then(data => {
-    //             setIsLoaded(true);
-    //             setItems(data)
-
-    //         },
-    //         (error) => {
-    //             setIsLoaded(true);
-    //             setError(error);
-    //         }
-            
-    //         );
-
-    // }, []);
-
-   
+        
 
     if(error) {
         return <div>Error: {error.message}</div>;
@@ -75,32 +51,36 @@ const AsanaFeed = () => {
     
         return (
 
-            <div>
+            <div >
                 <ul>
                     <Button
-                         onClick={() => asanaFiltering("all")} 
-                         text='All Asanas' />
+                         onClick={() => setAsanaFilter("all")} 
+                         text='All Asanas'/>
                          
                     <Button
-                         onClick={() => asanaFiltering("backbend")} 
+                         onClick={(e) => {
+                            e.preventDefault()
+                            setAsanaFilter("backbends")
+                                
+                                }} 
                          text='Back Bends' /> 
                     <Button 
-                        onClick={() => asanaFiltering("standing")} 
+                        onClick={() => setAsanaFilter("standing")} 
                         text='Standing' />
                     <Button 
-                        onClick={() => asanaFiltering("sitting")}
+                        onClick={() => setAsanaFilter("sitting")}
                         text='Sitting' />  
                     <Button 
-                        onClick={() => asanaFiltering("reclining")}
+                        onClick={() => setAsanaFilter("reclining")}
                         text='Reclining' />  
                     <Button 
-                        onClick={() => asanaFiltering("twists")}
+                        onClick={() => setAsanaFilter("twists")}
                         text='Twisting' />  
                     <Button 
-                        onClick={() => asanaFiltering("forwardbends")}
+                        onClick={() => setAsanaFilter("forwardbends")}
                         text='Foward Bends' />  
                     <Button 
-                        onClick={() => asanaFiltering("inversions")}
+                        onClick={() => setAsanaFilter("inversions")}
                         text='Inversions' />  
                 </ul>
                 

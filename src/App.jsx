@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar.jsx";
 
 
 
+
 //import Asana from "./components/AsanaFeed.jsx";
 
 
@@ -22,7 +23,7 @@ const App = () => {
       <h1>
         
 
-        <ul id='nav-list'>
+        <div id="nav-list">
           <li><a href="http://localhost:1234/"> Home </a></li>
           <li><a href="http://localhost:1234/AsanaLibrary"> Asanas </a></li>
           <li><a href="http://localhost:1234/Philosphy"> Philosophy </a></li>
@@ -30,7 +31,7 @@ const App = () => {
           <li><a href="http://localhost:1234/breathwork"> Breathwork </a></li>
           <li><a href="http://localhost:1234/AboutUs"> About Us</a></li>
 
-        </ul>
+        </div>
         <Navbar />
           
       </h1>

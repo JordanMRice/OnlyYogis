@@ -5,22 +5,13 @@ import Navbar from "../components/Navbar.jsx";
 
 const AsanasLibrary = () => {
 
-    
-    
-
     return (
         <>
-
             <div> Asanas page here!</div>
             <div>
                 < AsanaFeed />
             </div>
-
-        
         </>
-        
-
-
     )
 }
 
