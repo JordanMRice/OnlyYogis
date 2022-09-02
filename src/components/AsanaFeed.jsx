@@ -14,27 +14,31 @@ const AsanaFeed = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
     const [asanaFilter, setAsanaFilter] = useState("all");
+    const [toggleView, setToggleView] = useState(true);
 
 
     // function asanaFiltering(filter){
-       
+     
+    // const toggleViewMode() {
+        
+    // }
         
         
     // }
 
 
         useEffect(() => {
-            console.log("this is what that shit say: ", asanaFilter)
+            console.log("this is asana state: ", asanaFilter)
             fetchAsanaData(asanaFilter)
             .then(data => {
                     
-                    console.log("this is the data: ", data);
+                    console.log("this is the data in useEffect: ", data);
                     setIsLoaded(true);
                     setItems(data);
                     
                 },
                     (error) => {
-                    setIsLoaded(true);
+                    setIsLoaded(false);
                     console.log(error)
                     setError(error);
                 }
@@ -51,16 +55,17 @@ const AsanaFeed = () => {
     
         return (
 
-            <div >
+            <div class="feed">
                 <ul>
                     <Button
+                        
                          onClick={() => setAsanaFilter("all")} 
                          text='All Asanas'/>
                          
                     <Button
                          onClick={(e) => {
                             e.preventDefault()
-                            setAsanaFilter("backbends")
+                            setAsanaFilter("backbend")
                                 
                                 }} 
                          text='Back Bends' /> 

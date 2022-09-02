@@ -1,11 +1,11 @@
 import axios from "axios";
 
 
-const fetchAsanaData = (posture) => {
-    return axios.get(`http://localhost:5000/asanas/asana/${posture}`)
+const fetchAsanaData = async(posture) => {
+    return await axios.get(`http://localhost:5000/asanas/asana/${posture}`)
       .then((data) => {
   
-        console.log(data);
+        console.log("this is coming from the back end: ", data);
         return data.data.asanas;
       })
       .catch(err => {

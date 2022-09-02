@@ -62,10 +62,10 @@ router.delete('/:asanaId', async (req, res) => {
 router.get('/asana/twists', async (req, res) => {
 
     try {
-        const asanasByPosture =  await Asana.find({postureType : 'Twists'})
+        const asanas =  await Asana.find({postureType : 'Twists'})
             
-        console.log(asanasByPosture)
-        res.json(asanasByPosture)
+        console.log(asanas)
+        res.json({asanas})
     } catch(err) {
         res.json({message: err})
     }
@@ -75,10 +75,10 @@ router.get('/asana/twists', async (req, res) => {
 router.get('/asana/backbend', async (req, res) => {
 
     try {
-        const asanasByPosture =  await Asana.find({postureType : 'Back Bend'})
+        const asanas =  await Asana.find({postureType : 'Back Bend'})
             
-        console.log(asanasByPosture)
-        res.json(asanasByPosture)
+        console.log(asanas)
+        res.json({asanas})
     } catch(err) {
         res.json({message: err})
     }
@@ -88,10 +88,10 @@ router.get('/asana/backbend', async (req, res) => {
 router.get('/asana/sitting', async (req, res) => {
 
     try {
-        const asanasByPosture =  await Asana.find({postureType : 'Sitting'})
+        const asanas =  await Asana.find({postureType : 'Sitting'})
             
-        console.log(asanasByPosture)
-        res.json(asanasByPosture)
+        console.log(asanas)
+        res.json({asanas})
     } catch(err) {
         res.json({message: err})
     }
@@ -101,10 +101,10 @@ router.get('/asana/sitting', async (req, res) => {
 router.get('/asana/forwardbends', async (req, res) => {
 
     try {
-        const asanasByPosture =  await Asana.find({postureType : 'Forward Bends'})
+        const asanas =  await Asana.find({postureType : 'Forward Bends'})
             
-        console.log(asanasByPosture)
-        res.json(asanasByPosture)
+        console.log(asanas)
+        res.json({asanas})
     } catch(err) {
         res.json({message: err})
     }
@@ -114,10 +114,10 @@ router.get('/asana/forwardbends', async (req, res) => {
 router.get('/asana/inversions', async (req, res) => {
 
     try {
-        const asanasByPosture =  await Asana.find({postureType : 'Inversions'})
+        const asanas =  await Asana.find({postureType : 'Inversions'})
             
-        console.log(asanasByPosture)
-        res.json(asanasByPosture)
+        console.log(asanas)
+        res.json({asanas})
     } catch(err) {
         res.json({message: err})
     }
@@ -127,10 +127,10 @@ router.get('/asana/inversions', async (req, res) => {
 router.get('/asana/reclining', async (req, res) => {
 
     try {
-        const asanasByPosture =  await Asana.find({postureType : 'Reclining'})
+        const asanas =  await Asana.find({postureType : 'Reclining'})
             
-        console.log(asanasByPosture)
-        res.json(asanasByPosture)
+        console.log(asanas)
+        res.json({asanas})
     } catch(err) {
         res.json({message: err})
     }
@@ -140,10 +140,10 @@ router.get('/asana/reclining', async (req, res) => {
 router.get('/asana/standing', async (req, res) => {
 
     try {
-        const asanasByPosture =  await Asana.find({postureType : 'Standing'})
+        const asanas =  await Asana.find({postureType : 'Standing'})
             
-        console.log(asanasByPosture)
-        res.json(asanasByPosture)
+        console.log(asanas)
+        res.json({asanas})
     } catch(err) {
         res.json({message: err})
     }

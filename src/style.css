@@ -33,29 +33,91 @@ h5 {
 }
 
 
+
+
 #nav-list {
   display: flex;
   flex-direction: row;
-  align-content: center;
   background-color: #ffffff;
   text-decoration: none;
   cursor: pointer;
   font-size: 18px;
   font-style: none;
-  
+  position: fixed;
+  top: 0;
+  float: right;
 
 }
-
-
 
 a {
-  text-decoration-line: none;
-  
+  text-decoration-line: none; 
   
 }
+
 li {
   list-style-type: none;
   position: relative;
   margin: 0 0.8rem;
+  align-content: center;
 
+}
+
+div {
+  padding-top: 5px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  
+  background: whitesmoke;
+  padding: 1rem;
+  border: 1px solid#777;
+  border-radius: .50rem;
+  margin-bottom: .5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  float: left;
+  overflow: hidden;
+
+}
+
+
+
+.card-header {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.card-info {
+  font-size: 1rem;
+}
+
+.button {
+  background: rgb(140, 195, 85);
+  color: white;
+  border: 1px solid green;
+  border-color: rgb(140, 195, 85);
+  border-radius: .25rem;
+  font-size: 1rem;
+  padding: .5em .75em;
+  cursor: pointer;
+}
+
+.button:hover, .button:focus {
+  background: hsl(98, 58%, 94%);
+  color: rgb(140, 195, 85);  
+
+}
+
+.button + .button {
+  margin-left: .25rem;
+}
+
+.feed{
+  display: flex;
+  flex-direction: column;
 }

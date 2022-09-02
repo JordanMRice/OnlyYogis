@@ -10,19 +10,19 @@ import { useEffect, useState } from "react";
 
     return (
         <>
-            <li>
-                <h2>
+            <div class="card">
+                <h2 class="card-header">
                     {englishName}
                 </h2>
-                    <p>Sanskrit Name:{sanskritName}</p>
-                    <p>Posture Type:{postureType}</p>
-                    <p>Description:{description}</p>
+                    <p class="card-info">Sanskrit Name:{sanskritName}</p>
+                    <p class="card-info">Posture Type:{postureType}</p>
+                    {/* <p class="card-info">Description:{description}</p> */}
                 
-                <button> Read More</button>
-                <button> Favorite </button>
-                <button> Share!</button>
+                <button class="button"> Read More</button>
+                <button class="button"> Favorite </button>
+                <button class="button"> Share!</button>
 
-            </li>
+            </div> 
         </>
         
     );

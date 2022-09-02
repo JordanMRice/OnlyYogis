@@ -20,9 +20,8 @@ const App = () => {
     <>
     <div className="App">
       
-      <h1>
+      <h1 id="navbar-container">
         
-
         <div id="nav-list">
           <li><a href="http://localhost:1234/"> Home </a></li>
           <li><a href="http://localhost:1234/AsanaLibrary"> Asanas </a></li>
@@ -32,14 +31,18 @@ const App = () => {
           <li><a href="http://localhost:1234/AboutUs"> About Us</a></li>
 
         </div>
-        <Navbar />
+       
           
-      </h1>
-      
-          
+      </h1>  
 
     </div>
+
+    <div>
+      <Navbar />
+    </div>
+   
     </>
+    
     
   );
 };
