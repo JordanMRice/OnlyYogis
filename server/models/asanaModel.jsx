@@ -1,8 +1,6 @@
 //asana is synonymous with pose
 //so schema for individual poses and characteristics
 
-//import { ObjectId } from 'mongodb';
-
 const mongoose = require('mongoose')
 
 const AsanaSchema = new mongoose.Schema({
@@ -19,8 +17,9 @@ const AsanaSchema = new mongoose.Schema({
         required: true
     },
     description: {
-        type: String,
+        type: Object,
         required: true
+        
     },
     //hatha includes all poses
     //vinyasa is the primary series in ashtanga

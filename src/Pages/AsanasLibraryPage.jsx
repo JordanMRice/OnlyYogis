@@ -1,13 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import AsanaFeed from '../components/AsanaFeed.jsx'
+import AsanaFeed from '../components/AsanaComponents/AsanaFeed.jsx'
 import Navbar from "../components/Navbar.jsx";
 
 const AsanasLibrary = () => {
 
     return (
         <>
-            <div> Asanas page here!</div>
+            <div className="asana-library-header"> Browse our library of Yoga Asanas</div>
             <div>
                 < AsanaFeed />
             </div>

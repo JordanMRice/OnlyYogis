@@ -13,9 +13,11 @@ app.use(bodyParser.json())
 /**
  * require routes
  */
+const breathExerciseRoute = require('./routes/breathExercise.jsx')
 const asanasRoute = require('./routes/asanas.jsx');
 const signUpRoute = require('./routes/signUp.jsx')
 
+app.use('/breathwork', breathExerciseRoute)
 app.use('/asanas', asanasRoute)
 app.use('/signUp', signUpRoute)
 
@@ -23,15 +25,6 @@ app.use('/signUp', signUpRoute)
 app.get('/', (req, res) => {
   res.send('We are on home');
 })
-
-/**
- * handle parsing request body
- */
-
-
-/**
- * send static files to all requests with path '/'
- */
 
 
  /**
@@ -59,3 +52,15 @@ mongoose.connect (
   })); //listens on port 1234 -> http://localhost:1234/)
 
   module.exports = app;
+
+
+  /**
+ * Postman pathways
+ * post a new asana: POST -
+ * get one asana: GET:
+ * get all asanas: GET: http://localhost:5000/asanas/asana/all
+ * Update all asana: PUT
+ * post a new breathworkexercise: POST: 
+ * updat
+ * 
+ */

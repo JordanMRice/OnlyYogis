@@ -1,26 +1,22 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const breathExerciseSchema = new mongoose.Schema({
     sanskritName: {
         type: String,
         required: true
     },
     englishName: {
         type: String,
-        required: true
+        
     },
-    breathType: {
+    exerciseType: {
         type: String,
         required: true
     },
     description: {
         type: String,
         required: true
-    },
-    Sequence: {
-        type: String,
-        required: true
     }
 })
 
-module.exports = mongoose.model('user', userSchema)
+module.exports = mongoose.model('breathExercise', breathExerciseSchema)

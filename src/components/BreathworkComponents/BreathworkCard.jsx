@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 
- const AsanaCard = (props) => {
-    const { sanskritName, englishName, postureType, description } = props;
+ const BreathworkCard = (props) => {
+    const { sanskritName, exerciseType, description } = props;
 
     //console.log(" these are the props:", props);
 
@@ -12,10 +12,10 @@ import { useEffect, useState } from "react";
         <>
             <div class="card">
                 <h2 class="card-header">
-                    {englishName}
+                    {sanskritName}
                 </h2>
-                    <p class="card-info">Sanskrit Name:{sanskritName}</p>
-                    <p class="card-info">Posture Type:{postureType}</p>
+                    
+                    <p class="card-info">Posture Type: {exerciseType}</p>
                     {/* <p class="card-info">Description:{description}</p> */}
                 
                 <button class="button"> Read More</button>
@@ -28,4 +28,4 @@ import { useEffect, useState } from "react";
     );
  }
 
- export default AsanaCard;
+ export default BreathworkCard;

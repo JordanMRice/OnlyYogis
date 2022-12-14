@@ -1,12 +1,13 @@
 import React from "react";
-import{ BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import AsanasLibraryPage from '../Pages/AsanasLibraryPage.jsx';
-import BreathWork from '../Pages/Breathwork.jsx';
+import BreathWork from '../Pages/BreathworkLibrary.jsx';
 import AboutUs from '../Pages/AboutUs.jsx';
 import Philosphy from '../Pages/Philosophy.jsx';
 import HomePage from '../Pages/Home.jsx';
 import Sequences from '../Pages/Sequences.jsx';
+import AccountPage from '../Pages/AccountPage.jsx';
 //import navbarStyle from '../styles/navBarStyle.css';
 
 
@@ -33,6 +34,9 @@ function Navbar () {
                     } />
                     <Route path="/sequences" element={
                         <Sequences />
+                    } />
+                      <Route path="/accountPage" element={
+                        <AccountPage />
                     } />
                 </Routes>
             </BrowserRouter>

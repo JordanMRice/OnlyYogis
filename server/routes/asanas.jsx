@@ -19,11 +19,7 @@ router.post('/', async (req, res) => {
         sanskritName: req.body.sanskritName,
         englishName: req.body.englishName,
         postureType: req.body.postureType,
-        description: req.body.description,
-        // ashtanga: req.body.ashtanga,
-        // vinyasa: req.body.vinyasa,
-        // kundalini: req.body.kundalini,
-        // iyengar: req.body.iyengar
+        description: req.body.description
     });
     try {
         const savedAsana = await asana.save()
@@ -48,15 +44,12 @@ router.get('/:asanaId', async (req, res) => {
 router.delete('/:asanaId', async (req, res) => {
     try {
         const removedAsana = await Asana.deleteOne({_id: req.params.asanaId });
-        res.json(removedAsana)
+        res.json(removedAsana);
     } catch(err) {
         res.json({message: err})
     }
 
-})
-
-
-
+});
 
 //find twisting Asanas
 router.get('/asana/twists', async (req, res) => {
@@ -69,7 +62,7 @@ router.get('/asana/twists', async (req, res) => {
     } catch(err) {
         res.json({message: err})
     }
-})
+});
 
 //find backbend Asanas
 router.get('/asana/backbend', async (req, res) => {
@@ -147,6 +140,33 @@ router.get('/asana/standing', async (req, res) => {
     } catch(err) {
         res.json({message: err})
     }
+})
+
+//add a field and update  Asanas
+router.put('/asana/update', async (req, res) => {
+    
+    try {
+        const asana = await Asana.updateOne({description : "In the final posture your body..."}, { 
+           $set:{ description: req.body.description }
+        })
+        res.json({asana})
+        
+    } catch(err) {
+        res.json({message:err})
+    }
+})
+
+router.put('/asana/update/all', async (req, res) => {
+    try { 
+        const asana = await Asana.updateMany({}, {
+            $set:{ description: req.body.description }
+        })
+        res.json({asana})
+    } catch(err) {
+        res.json({message:err})
+    }
+
+
 })
 
 
