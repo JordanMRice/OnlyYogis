@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AsanaCard from './AsanaCard'
+import asanaInfo from "../../Pages/AsanaInfoPage";
 import {fetchAsanaData} from "../../../lib/AsanaFetch";
 import { Button } from "../Button";
 import { text } from "body-parser";
 import { set } from "mongoose";
-import asanaInfo from "../../Pages/AsanaInfoPage";
+
 
 //implement toggle view mode once css is set up
 //implement onClick for AsanaFilter
@@ -22,31 +23,44 @@ const AsanaFeed = () => {
     // function asanaFiltering(filter){
      
     // const toggleViewMode() {
+    const navigate = useNavigate();
+    const redirectToAsanaInfo = (id) => {
+        navigate(asanaInfo(id));
+    }
+    
+    const anon = () => {
+        console.log(1111)
+    }
+    
+    const func = {};
+    func.testFunc = anon
 
-        useEffect(() => {
-            console.log("this is asana state: ", asanaFilter)
-            fetchAsanaData(asanaFilter)
-            .then(data => {
-                    
-                    console.log("this is the data in useEffect: ", data);
-                    setIsLoaded(true);
-                    setItems(data);
-                    
-                },
-                    (error) => {
-                    setIsLoaded(false);
-                    console.log(error)
-                    setError(error);
+    useEffect(() => {
+        console.log("this is asana state: ", asanaFilter)
+        fetchAsanaData(asanaFilter)
+        .then(data => {
+                
+                console.log("this is the data in useEffect: ", data);
+                setIsLoaded(true);
+                for ( let i = 0; i < data.length; i++) {
+                    data[i].myFunc = func
                 }
-            );
-        }, [asanaFilter]);
+                setItems(data);
+                
+                
+                console.log("inside the useEffect", data)
+                
+            },
+                (error) => {
+                setIsLoaded(false);
+                console.log(error)
+                setError(error);
+            }
+        );
+    }, [asanaFilter]);
 
 
-        const navigate = useNavigate();
-        const redirectToAsanaInfo = () => {
-            navigate(asanaInfo(id));
-        }
-
+        
     
     if(error) {
         return <div>Error: {error.message}</div>;
@@ -88,6 +102,7 @@ const AsanaFeed = () => {
                     <h3>
                         <div className="asanaCards">
                             {items.map(items => (
+                                // items.redirect = redirectToAsanaInfo()
                                 AsanaCard( items )
                                 
                            

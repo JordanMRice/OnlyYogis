@@ -24,8 +24,6 @@ const App = () => {
             <li className="navbar-item"><a href="http://localhost:1234/AboutUs"> About Us </a></li>
             <div className="navbar-spacer"></div>
             <li><a href="http://localhost:1234/AccountPage"> Account Page </a></li>
-
-
           </div>
         </h1>  
       </div>
