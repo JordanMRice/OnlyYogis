@@ -8,7 +8,7 @@ import Philosphy from '../Pages/Philosophy.jsx';
 import HomePage from '../Pages/Home.jsx';
 import Sequences from '../Pages/Sequences.jsx';
 import AccountPage from '../Pages/AccountPage.jsx';
-import asanaInfo from "../Pages/AsanaInfoPage.jsx";
+import AsanaInfo from "../Pages/AsanaInfoPage.jsx";
 //import navbarStyle from '../styles/navBarStyle.css';
 
 
@@ -40,7 +40,7 @@ function Navbar () {
                         <AccountPage />
                     } />
                     <Route path="/asanaInfo" element={
-                        <asanaInfo />
+                        <AsanaInfo />
                     } />
                 </Routes>
             </BrowserRouter>

@@ -5,6 +5,7 @@ import { ReactDOM } from "react";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 
+
 //import Asana from "./components/AsanaFeed.jsx";
 
 //nav bar
@@ -33,12 +34,11 @@ const App = () => {
       </div>
     
       <div>
-      <Footer />
+        <Footer />
       </div>
 
+    
     </>
-    
-    
   );
 };
 

@@ -12,10 +12,11 @@ const fetchAsanaData = async(posture) => {
       });
 }
 
-const fetchSpecificAsana = async(asanaName) => {
-  return await axios.get(`http://localhost:5000/asanas/:asanaId`)
+const fetchSpecificAsana = async(id) => {
+  return await axios.get(`http://localhost:5000/asanas/${id}`)
   .then((data) => {
-    return data.data.asanas
+    console.log("in the fetch file", data.data)
+    return data.data
   })
   .catch(err => {
     console.error(err)

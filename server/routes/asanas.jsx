@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
 //find specific asana 
 router.get('/:asanaId', async (req, res) => {
     try {
-        const asana = await Asana.findById(req.params.asanaId);
+        const asana = await Asana.findById({_id: req.params.asanaId});
         res.json(asana);
     } catch(err) {
         res.json({message: err})

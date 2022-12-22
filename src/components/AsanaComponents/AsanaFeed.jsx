@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AsanaCard from './AsanaCard'
-import asanaInfo from "../../Pages/AsanaInfoPage";
+import AsanaCard from './AsanaCard';
+import {AsanaInfo} from "../../Pages/AsanaInfoPage";
 import {fetchAsanaData} from "../../../lib/AsanaFetch";
 import { Button } from "../Button";
 import { text } from "body-parser";
-import { set } from "mongoose";
-
 
 //implement toggle view mode once css is set up
-//implement onClick for AsanaFilter
+
 const AsanaFeed = () => {
     
     //console.log(fetchAsanaData())
@@ -20,20 +18,21 @@ const AsanaFeed = () => {
     const [toggleView, setToggleView] = useState(true);
 
 
-    // function asanaFiltering(filter){
-     
-    // const toggleViewMode() {
     const navigate = useNavigate();
+
     const redirectToAsanaInfo = (id) => {
-        navigate(asanaInfo(id));
-    }
+        navigate("/AsanaInfo", { 
+            state: { 
+                asanaId: id 
+            },
+         });
+    };
     
-    const anon = () => {
-        console.log(1111)
-    }
-    
-    const func = {};
-    func.testFunc = anon
+   
+    const func = {
+        testFunc : redirectToAsanaInfo
+    };
+   
 
     useEffect(() => {
         console.log("this is asana state: ", asanaFilter)
@@ -47,7 +46,6 @@ const AsanaFeed = () => {
                 }
                 setItems(data);
                 
-                
                 console.log("inside the useEffect", data)
                 
             },
@@ -58,9 +56,7 @@ const AsanaFeed = () => {
             }
         );
     }, [asanaFilter]);
-
-
-        
+      
     
     if(error) {
         return <div>Error: {error.message}</div>;
@@ -103,17 +99,11 @@ const AsanaFeed = () => {
                         <div className="asanaCards">
                             {items.map(items => (
                                 // items.redirect = redirectToAsanaInfo()
-                                AsanaCard( items )
-                                
-                           
-                            ))}
-
-                                
+                                AsanaCard(items )                         
+                            ))}  
                         </div>
-                    </h3>
-                    
-            </div>
-           
+                    </h3>                    
+            </div>          
         );
     }
 };
